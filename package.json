@@ -1,0 +1,30 @@
+{
+  "name": "kevoree-comp-nodered",
+  "version": "1.0.0",
+  "main": "./lib/NodeRED.js",
+  "kevoree": {
+    "package": "org.kevoree.library"
+  },
+  "scripts": {
+    "prepublish": "grunt",
+    "postpublish": "grunt publish"
+  },
+  "keywords": [
+    "kevoree-std-lib",
+    "kevoree",
+    "library",
+    "comp"
+  ],
+  "dependencies": {
+    "express": "^4.12.4",
+    "kevoree-entities": "^8.0.0",
+    "node-red": "^0.10.10",
+    "shortid": "^2.2.2"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.1",
+    "grunt-kevoree": "^5.0.0",
+    "grunt-kevoree-genmodel": "^2.0.0",
+    "grunt-kevoree-registry": "^2.0.0"
+  }
+}

@@ -1,0 +1,9 @@
+add node0 : JavascriptNode
+add sync : WSGroup
+add node0.nodeRED : NodeRED
+
+set node0.nodeRED.userDir = "/tmp/nodered"
+
+attach node0 sync
+
+set node0.logLevel = 'DEBUG'
