@@ -16,7 +16,7 @@
     "comp"
   ],
   "dependencies": {
-    "express": "^4.12.4",
+    "express": "^3.17.2",
     "kevoree-entities": "^8.0.0",
     "node-red": "^0.10.10",
     "shortid": "^2.2.2"

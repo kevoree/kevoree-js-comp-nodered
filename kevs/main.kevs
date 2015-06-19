@@ -1,9 +1,19 @@
-add node0 : JavascriptNode
-add sync : WSGroup
+add node0, browser : JavascriptNode
 add node0.nodeRED : NodeRED
+add browser.sender : MsgSender
+add sync : WSGroup
+add chan : RemoteWSChan
 
-set node0.nodeRED.userDir = "/tmp/nodered"
+attach node0, browser sync
 
-attach node0 sync
+bind node0.nodeRED.input chan
+bind browser.sender.send chan
 
 set node0.logLevel = 'DEBUG'
+set node0.nodeRED.userDir = '/tmp/nodered'
+set sync.master = 'node0'
+set sync.port/browser = ''
+set chan.uuid = '456456'
+set chan.host = 'ws.kevoree.org'
+
+network node0.ip.lo 127.0.0.1
