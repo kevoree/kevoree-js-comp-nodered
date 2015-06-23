@@ -1,19 +1,19 @@
-add node0, browser : JavascriptNode
-add node0.nodeRED : NodeRED
-add browser.sender : MsgSender
-add sync : WSGroup
-add chan : RemoteWSChan
+add node0: JavascriptNode
+add node0.nodeRED: NodeRED
+add node0.ticker: Ticker
+add node0.printer: ConsolePrinter
+add sync: WSGroup
+add chan0, chan1: LocalChannel
 
-attach node0, browser sync
+set node0.nodeRED.flows = '[{"id":"kWSServerOutputConf","type":"websocket-client","path":"ws://127.0.0.1:45001","wholemsg":"false"},{"id":"kWSServerInputConf","type":"websocket-client","path":"ws://127.0.0.1:45000","wholemsg":"false"},{"id":"kWSServerInput","type":"websocket in","name":"kevoreeInput","server":"","client":"kWSServerInputConf","x":256,"y":173,"z":"a06dc5d1.5f9238","wires":[["f087077f.0f78f8","7024f2ae.8fdb0c"]]},{"id":"kWSServerOutput","type":"websocket out","name":"kevoreeOutput","server":"","client":"kWSServerOutputConf","x":647,"y":168,"z":"a06dc5d1.5f9238","wires":[]},{"id":"f087077f.0f78f8","type":"change","name":"filter","rules":[{"t":"delete","p":"_session"}],"action":"","property":"","from":"","to":"","reg":false,"x":454,"y":173,"z":"a06dc5d1.5f9238","wires":[["kWSServerOutput","49a46d98.b65b94"]]},{"id":"7024f2ae.8fdb0c","type":"debug","name":"afterKevoreeInput","active":true,"console":"false","complete":"true","x":384,"y":282,"z":"a06dc5d1.5f9238","wires":[]},{"id":"49a46d98.b65b94","type":"debug","name":"afterFilter","active":true,"console":"false","complete":"true","x":615,"y":277,"z":"a06dc5d1.5f9238","wires":[]}]'
 
-bind node0.nodeRED.input chan
-bind browser.sender.send chan
+attach node0 sync
+
+bind node0.nodeRED.input chan0
+bind node0.ticker.tick chan0
+
+bind node0.nodeRED.output chan1
+bind node0.printer.input chan1
 
 set node0.logLevel = 'DEBUG'
 set node0.nodeRED.userDir = '/tmp/nodered'
-set sync.master = 'node0'
-set sync.port/browser = ''
-set chan.uuid = '456456'
-set chan.host = 'ws.kevoree.org'
-
-network node0.ip.lo 127.0.0.1

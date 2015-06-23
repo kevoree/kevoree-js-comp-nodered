@@ -1,6 +1,6 @@
 {
   "name": "kevoree-comp-nodered",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "./lib/NodeRED.js",
   "kevoree": {
     "package": "org.kevoree.library"
@@ -13,13 +13,17 @@
     "kevoree-std-lib",
     "kevoree",
     "library",
-    "comp"
+    "comp",
+    "node-red"
   ],
   "dependencies": {
     "express": "^3.17.2",
     "kevoree-entities": "^8.0.0",
     "node-red": "^0.10.10",
-    "shortid": "^2.2.2"
+    "shortid": "^2.2.2",
+    "when": "^3.7.3",
+    "ws": "^0.7.2",
+    "ws-broadcast": "^2.0.0"
   },
   "devDependencies": {
     "grunt": "^0.4.1",
