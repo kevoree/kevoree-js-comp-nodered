@@ -14,6 +14,7 @@ httpAdminRoot | false         | string        | the root url for the Node-RED ed
 httpNodeRoot  | false         | string        | the root url for nodes that provide HTTP endpoints          | "/api"
 port          | false         | number        | the port used by the Node-RED editor express server         | 9090
 userDir       | false         | string        | the directory to store all user data                        | _none_
+nodesDir      | true         | string         | a directory to search for additional installed nodes (nodes must be available in [nodesDir]/nodes/)                        | _none_
 
 #### KevScript example
 
