@@ -5,6 +5,7 @@ add node0.printer: ConsolePrinter
 add sync: WSGroup
 add chan0, chan1: LocalChannel
 
+set node0.nodeRED.nodesDir = '/tmp/nodered-nodes'
 set node0.nodeRED.flows = '
 [
    {

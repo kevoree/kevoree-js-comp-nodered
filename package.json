@@ -1,6 +1,6 @@
 {
   "name": "kevoree-comp-nodered",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "main": "./lib/NodeRED.js",
   "kevoree": {
     "package": "org.kevoree.library"
