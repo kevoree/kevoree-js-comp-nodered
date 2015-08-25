@@ -31,5 +31,16 @@
     "grunt-kevoree": "^5.0.0",
     "grunt-kevoree-genmodel": "^2.0.0",
     "grunt-kevoree-registry": "^2.0.0"
-  }
+  },
+  "description": "This component is able to start a [Node-RED](http://nodered.org/) runtime.   You can communicate with nodes inside your flows using the component input and output ports.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevoree/kevoree-js-comp-nodered.git"
+  },
+  "author": "Maxime Tricoire <max.tricoire@gmail.com>",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/kevoree/kevoree-js-comp-nodered/issues"
+  },
+  "homepage": "https://github.com/kevoree/kevoree-js-comp-nodered#readme"
 }
